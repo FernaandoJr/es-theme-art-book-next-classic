@@ -1,8 +1,6 @@
 <theme>
    <formatVersion>7</formatVersion>
 
-   <!-- R36H / ArkOS 640x480 — system from Next, gamelist from Art Book classic -->
-
    <view name="screen">
       <batteryIndicator name="batteryIndicator">
          <pos>0 0.03125</pos><!-- 0 15 -->
@@ -10,20 +8,19 @@
       </batteryIndicator>
    </view>
 
-   <view name="system,basic,detailed,video,grid">
+   <view name="system,basic,detailed,video">
       <helpsystem name="help">
          <origin>0 0</origin>
          <pos>1 1</pos>
       </helpsystem>
    </view>
 
-   <!-- System view (Art Book Next) -->
    <view name="system">
       <text name="logoText">
          <fontSize>0.0875</fontSize><!-- 42 -->
       </text>
       <image ifSubset="system-view-style:centered|centered-custom|centered-one-logo" name="system-art-mask" extra="true">
-         <path>./resources/customizations/system-art-mask.svg</path>
+         <path>./_inc/images/system-art-mask-4-3.png</path>
       </image>
       <carousel ifSubset="system-view-style:multi|multi-custom" name="systemcarousel">
          <logoSize>1 1</logoSize>
@@ -34,52 +31,9 @@
       </image>
    </view>
 
-   <!-- Gamelist (Art Book classic, tuned for 4:3) -->
-   <view name="basic,detailed,video,grid">
-      <image name="logo">
-         <pos>0.5 0.145</pos>
-         <maxSize>0.42 0.12</maxSize>
-      </image>
-      <text name="logoText">
-         <pos>0.5 0.145</pos>
-         <size>0.9 0.08</size>
-         <fontSize>0.055</fontSize>
-      </text>
-   </view>
 
-   <view name="basic">
-      <textlist name="gamelist">
-         <pos>0.05 0.28</pos>
-         <size>0.9 0.68</size>
-         <fontSize>0.038</fontSize>
-         <lineSpacing>1.55</lineSpacing>
-      </textlist>
-   </view>
 
-   <view name="detailed,video">
-      <textlist name="gamelist">
-         <pos>0.05 0.28</pos>
-         <size>0.42 0.68</size>
-         <fontSize>0.038</fontSize>
-         <lineSpacing>1.55</lineSpacing>
-      </textlist>
-      <image name="md_image">
-         <pos>0.74 0.55</pos>
-         <maxSize>0.42 0.52</maxSize>
-      </image>
-   </view>
 
-   <view name="video">
-      <video name="md_video">
-         <pos>0.74 0.55</pos>
-         <maxSize>0.42 0.52</maxSize>
-      </video>
-   </view>
 
-   <view name="grid">
-      <imagegrid name="gamegrid">
-         <pos>0.05 0.28</pos>
-         <size>0.9 0.64</size>
-      </imagegrid>
-   </view>
+
 </theme>

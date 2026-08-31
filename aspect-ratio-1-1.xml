@@ -1,23 +1,32 @@
 <theme>
    <formatVersion>7</formatVersion>
-
    <view name="screen">
       <batteryIndicator name="batteryIndicator">
-         <pos>0.0325 0.03125</pos>
-         <size>0.978125 0.05</size>
+         <pos>0.0325 0.03125</pos><!-- 0 15 -->
+         <size>0.978125 0.05</size><!-- 626 32 -->
       </batteryIndicator>
       <text name="clock">
          <pos>0.5775 0.03125</pos>
          <size>0.4 0.05</size>
+         <textColor>eeeeee77</textColor>
          <fontSize>0.03</fontSize>
          <alignment>right</alignment>
          <verticalAlignment>center</verticalAlignment>
          <color>ffffff</color>
       </text>
+      <helpsystem name="help">
+         <z-index>55</z-index>
+         <textColor>eeeeee</textColor>
+         <iconColor>eeeeee</iconColor>
+         <origin>0 0</origin>
+         <pos>1 1</pos>
+      </helpsystem>
    </view>
 
-   <view name="system,basic,detailed,video,grid">
+   <view name="system,basic,detailed,video">s
       <helpsystem name="help">
+         <textColor>eeeeee</textColor>
+         <iconColor>eeeeee</iconColor>
          <origin>0 0</origin>
          <pos>1 1</pos>
       </helpsystem>
@@ -25,19 +34,46 @@
 
    <view name="system">
       <text name="logoText">
-         <fontSize>0.0875</fontSize>
+         <fontSize>0.0875</fontSize><!-- 42 -->
       </text>
-      <carousel ifSubset="system-view-style:multi|multi-custom" name="systemcarousel">
-         <logoSize>1.025 1.025</logoSize>
-         <maxLogoCount>3</maxLogoCount>
-      </carousel>
-      <carousel ifSubset="system-view-style:centered-one-logo" name="systemcarousel">
+      <carousel name="systemcarousel">
          <logoScale>1</logoScale>
          <logoSize>0.7 0.5</logoSize>
          <maxLogoCount>1</maxLogoCount>
       </carousel>
+      <carousel name="systemcarousel">
+         <logoSize>1.025 1.025</logoSize>
+         <maxLogoCount>3</maxLogoCount>
+      </carousel>
       <image ifSubset="system-view-style:fullscreen-custom" name="system-art" extra="true">
          <size>0 1</size>
       </image>
+      <image name="syslogo" extra="true">
+         <origin>0.5 0.5</origin>
+         <pos>0.5 0.5</pos>
+         <maxSize>0.7 0.5</maxSize>
+         <zIndex>50</zIndex>
+         <color>${systemLogoColor}</color>
+         <path>./_inc/systems/${system.theme}_logo.png</path>
+         <path>./_inc/systems/${system.theme}.svg</path>
+      </image>
+      <text name="systemInfo">
+         <zIndex>44</zIndex>       
+         <pos>0.0 0.91125</pos>
+         <backgroundColor>00000000</backgroundColor>
+         <color>ffffff</color>
+	      <fontSize>0.02</fontSize>
+         <zIndex>44</zIndex>	     
+      </text>     
+      <helpsystem name="help">
+         <textColor>eeeeee</textColor>
+         <iconColor>eeeeee</iconColor>
+         <z-index>55</z-index>
+      </helpsystem>
    </view>
+
+
+
+
+
 </theme>

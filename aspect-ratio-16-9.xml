@@ -5,24 +5,17 @@
 
    <view name="screen">
       <batteryIndicator name="batteryIndicator">
-         <pos>0 0.018518518518519</pos>
-         <size>0.989583333333333 0.046296296296296</size>
+         <pos>0 0.018518518518519</pos><!-- 0 20 -->
+         <size>0.989583333333333 0.046296296296296</size><!-- 1900 50 -->
       </batteryIndicator>
-   </view>
-
-   <view name="system,basic,detailed,video,grid">
-      <helpsystem name="help">
-         <origin>0 0</origin>
-         <pos>1 1</pos>
-      </helpsystem>
    </view>
 
    <view name="system">
       <text name="logoText">
-         <fontSize>0.1</fontSize>
+         <fontSize>0.1</fontSize><!-- 108 -->
       </text>
       <image ifSubset="system-view-style:centered|centered-custom|centered-one-logo" name="system-art-mask" extra="true">
-         <path>./resources/customizations/system-art-mask.svg</path>
+         <path>./_inc/images/system-art-mask-16-9.png</path>
       </image>
       <carousel ifSubset="system-view-style:multi|multi-custom" name="systemcarousel">
          <logoSize>1.1 1.1</logoSize>
@@ -32,4 +25,10 @@
          <size>1 0</size>
       </image>
    </view>
+
+
+
+
+
+
 </theme>

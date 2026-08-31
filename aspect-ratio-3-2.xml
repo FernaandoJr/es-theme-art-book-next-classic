@@ -1,16 +1,14 @@
 <theme>
    <formatVersion>7</formatVersion>
 
-   <!-- Native Art Book 3:2 — system from Next, gamelist positions from classic base -->
-
    <view name="screen">
       <batteryIndicator name="batteryIndicator">
-         <pos>0 0.03125</pos>
-         <size>0.980555555555556 0.066666666666667</size>
+         <pos>0 0.03125</pos><!-- 0 15 -->
+         <size>0.980555555555556 0.066666666666667</size><!-- 706 32 -->
       </batteryIndicator>
    </view>
 
-   <view name="system,basic,detailed,video,grid">
+   <view name="system,basic,detailed,video">
       <helpsystem name="help">
          <origin>0 0</origin>
          <pos>1 1</pos>
@@ -19,7 +17,7 @@
 
    <view name="system">
       <text name="logoText">
-         <fontSize>0.0875</fontSize>
+         <fontSize>0.0875</fontSize><!-- 42 -->
          <zIndex>42</zIndex>
       </text>
       <carousel ifSubset="system-view-style:multi|multi-custom" name="systemcarousel">
@@ -30,4 +28,10 @@
          <size>0 1</size>
       </image>
    </view>
+
+
+
+
+
+
 </theme>

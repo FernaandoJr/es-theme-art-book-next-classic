@@ -1,10 +1,7 @@
 <!--
 theme name:    Art Book Next Classic
-author:        hybrid of Art Book Next (ArkOS) + Art Book 3:2
+author:        hybrid — system: Art Book Next ArkOS / gamelist: Art Book 3:2
 license:       creative commons CC-BY-NC-SA
-
-System list: Art Book Next ArkOS
-Gamelist:    Art Book 3:2 (classic)
 -->
 <theme defaultTransition="instant">
    <formatVersion>7</formatVersion>
@@ -15,8 +12,8 @@ Gamelist:    Art Book 3:2 (classic)
       <fontLight>./_inc/fonts/Oxygen-Light.ttf</fontLight>
       <fontRegular>./_inc/fonts/Oxygen-Regular.ttf</fontRegular>
       <fontLogo>./_inc/fonts/ChangaOne-Italic.ttf</fontLogo>
-      <bodyFont>./_inc/fonts/Cabin-Bold.ttf</bodyFont>
       <logoFont>./_inc/fonts/ChangaOne-Italic.ttf</logoFont>
+      <bodyFont>./_inc/fonts/Cabin-Bold.ttf</bodyFont>
       <spacerImage>./_inc/images/space.png</spacerImage>
       <themeCustomizationsPath>./resources/customizations/art-book-next/</themeCustomizationsPath>
    </variables>
@@ -31,7 +28,7 @@ Gamelist:    Art Book 3:2 (classic)
       <include name="1-1" displayName="1:1" />
    </subset>
 
-   <!-- Color Scheme (ArkOS-safe: path on each include) -->
+   <!-- Color Scheme -->
    <include>./colors.xml</include>
    <subset name="color-scheme" displayName="Color Scheme">
       <include name="art-book-next" displayName="Art Book Next">./_inc/colors/art-book-next.xml</include>
@@ -49,7 +46,7 @@ Gamelist:    Art Book 3:2 (classic)
       <include name="custom" displayName="Custom" />
    </subset>
 
-   <!-- System View Style (Art Book Next) -->
+   <!-- System View Style -->
    <subset name="system-view-style" displayName="System View: Style">
       <include name="multi" displayName="Multi Artwork" />
       <include name="centered" displayName="Centered Artwork (Multiple Logos)" />
@@ -60,7 +57,7 @@ Gamelist:    Art Book 3:2 (classic)
       <include name="fullscreen-custom" displayName="Fullscreen Artwork (Custom)" />
    </subset>
 
-   <!-- Gamelist View Style (Art Book classic, ArkOS-safe includes) -->
+   <!-- Gamelist View Style (exact Art Book 3:2 metadata subsets) -->
    <subset name="metadata" displayName="Gamelist View Style">
       <include name="off" displayName="No Metadata">./_inc/subsets/metadata-off.xml</include>
       <include name="min" displayName="Minimum Metadata">./_inc/subsets/metadata-min.xml</include>
@@ -71,7 +68,6 @@ Gamelist:    Art Book 3:2 (classic)
       <include name="polymega" displayName="Polymega">./_inc/subsets/metadata-polymega.xml</include>
    </subset>
 
-   <!-- ========== SCREEN / SYSTEM (Art Book Next) ========== -->
    <view name="screen">
       <controllerActivity name="controllerActivity">
          <visible>false</visible>
@@ -100,7 +96,8 @@ Gamelist:    Art Book 3:2 (classic)
    <view name="system,basic,detailed,video,grid">
       <image name="logo">
          <path>./_inc/systems/${system.theme}.svg</path>
-         <path>./_inc/systems/${system.theme}.png</path>
+         <path ifSubset="color-scheme:custom">${themeCustomizationsPath}logos/${system.theme}.svg</path>
+         <path ifSubset="color-scheme:custom">${themeCustomizationsPath}logos/${system.theme}.png</path>
       </image>
       <text name="logoText">
          <fontPath>${fontLogo}</fontPath>
@@ -151,6 +148,7 @@ Gamelist:    Art Book 3:2 (classic)
          <color>${systemArtFade}</color>
          <zIndex>3</zIndex>
       </image>
+      <!-- System View Mask: Multi Artwork -->
       <image name="logo">
          <path>./_inc/systems/_default.png</path>
          <path>./_inc/systems/${system.theme}.png</path>
@@ -162,10 +160,9 @@ Gamelist:    Art Book 3:2 (classic)
       </image>
    </view>
 
-   <!-- ========== GAMELIST (Art Book classic) ========== -->
+   <!-- Gamelist: exact Art Book 3:2 -->
    <include>./_inc/gamelist/base.xml</include>
 
-   <!-- ========== MENU (Art Book Next / ArkOS) ========== -->
    <view name="menu">
       <menuText name="menutitle">
          <fontPath>${fontBold}</fontPath>
@@ -225,7 +222,7 @@ Gamelist:    Art Book 3:2 (classic)
       </menuIcons>
    </view>
 
-   <!-- Aspect Ratio overlays -->
+   <!-- Aspect Ratio -->
    <include ifSubset="aspect-ratio:16-9">./aspect-ratio-16-9.xml</include>
    <include ifSubset="aspect-ratio:16-10">./aspect-ratio-16-10.xml</include>
    <include ifSubset="aspect-ratio:4-3">./aspect-ratio-4-3.xml</include>
