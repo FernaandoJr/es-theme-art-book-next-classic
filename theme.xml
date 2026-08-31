@@ -1,0 +1,235 @@
+<!--
+theme name:    Art Book Next Classic
+author:        hybrid of Art Book Next (ArkOS) + Art Book 3:2
+license:       creative commons CC-BY-NC-SA
+
+System list: Art Book Next ArkOS
+Gamelist:    Art Book 3:2 (classic)
+-->
+<theme defaultTransition="instant">
+   <formatVersion>7</formatVersion>
+
+   <!-- Variables -->
+   <variables>
+      <fontBold>./_inc/fonts/Oxygen-Bold.ttf</fontBold>
+      <fontLight>./_inc/fonts/Oxygen-Light.ttf</fontLight>
+      <fontRegular>./_inc/fonts/Oxygen-Regular.ttf</fontRegular>
+      <fontLogo>./_inc/fonts/ChangaOne-Italic.ttf</fontLogo>
+      <bodyFont>./_inc/fonts/Cabin-Bold.ttf</bodyFont>
+      <logoFont>./_inc/fonts/ChangaOne-Italic.ttf</logoFont>
+      <spacerImage>./_inc/images/space.png</spacerImage>
+      <themeCustomizationsPath>./resources/customizations/art-book-next/</themeCustomizationsPath>
+   </variables>
+
+   <!-- Aspect Ratio -->
+   <subset name="aspect-ratio" displayName="Aspect Ratio">
+      <include name="16-9" displayName="16:9" />
+      <include name="16-10" displayName="16:10" />
+      <include name="4-3" displayName="4:3" />
+      <include name="3-2" displayName="3:2" />
+      <include name="5-3" displayName="5:3" />
+      <include name="1-1" displayName="1:1" />
+   </subset>
+
+   <!-- Color Scheme (ArkOS-safe: path on each include) -->
+   <include>./colors.xml</include>
+   <subset name="color-scheme" displayName="Color Scheme">
+      <include name="art-book-next" displayName="Art Book Next">./_inc/colors/art-book-next.xml</include>
+      <include name="art-book" displayName="Art Book">./_inc/colors/art-book.xml</include>
+      <include name="steam-os" displayName="Steam OS">./_inc/colors/steam-os.xml</include>
+      <include name="snes" displayName="SNES">./_inc/colors/snes.xml</include>
+      <include name="famicom" displayName="Famicom">./_inc/colors/famicom.xml</include>
+      <include name="black" displayName="Black">./_inc/colors/black.xml</include>
+      <include name="grayscale" displayName="Grayscale">./_inc/colors/greyscale.xml</include>
+   </subset>
+
+   <!-- Fonts -->
+   <subset name="fonts" displayName="Font Size">
+      <include name="default" displayName="Default" />
+      <include name="custom" displayName="Custom" />
+   </subset>
+
+   <!-- System View Style (Art Book Next) -->
+   <subset name="system-view-style" displayName="System View: Style">
+      <include name="multi" displayName="Multi Artwork" />
+      <include name="centered" displayName="Centered Artwork (Multiple Logos)" />
+      <include name="centered-one-logo" displayName="Centered Artwork (Single Logo)" />
+      <include name="no-artwork" displayName="No Artwork" />
+      <include name="centered-custom" displayName="Centered Artwork (Custom)" />
+      <include name="multi-custom" displayName="Multi Artwork (Custom)" />
+      <include name="fullscreen-custom" displayName="Fullscreen Artwork (Custom)" />
+   </subset>
+
+   <!-- Gamelist View Style (Art Book classic, ArkOS-safe includes) -->
+   <subset name="metadata" displayName="Gamelist View Style">
+      <include name="off" displayName="No Metadata">./_inc/subsets/metadata-off.xml</include>
+      <include name="min" displayName="Minimum Metadata">./_inc/subsets/metadata-min.xml</include>
+      <include name="min-flipped" displayName="Minimum Metadata (Flipped)">./_inc/subsets/metadata-min-flipped.xml</include>
+      <include name="max" displayName="Maximum Metadata">./_inc/subsets/metadata-max.xml</include>
+      <include name="max-flipped" displayName="Maximum Metadata (Flipped)">./_inc/subsets/metadata-max-flipped.xml</include>
+      <include name="media-only" displayName="Media Only">./_inc/subsets/metadata-media-only.xml</include>
+      <include name="polymega" displayName="Polymega">./_inc/subsets/metadata-polymega.xml</include>
+   </subset>
+
+   <!-- ========== SCREEN / SYSTEM (Art Book Next) ========== -->
+   <view name="screen">
+      <controllerActivity name="controllerActivity">
+         <visible>false</visible>
+      </controllerActivity>
+      <text name="clock">
+         <pos>1 1</pos>
+         <size>0.4 0.07</size>
+         <fontSize>0.04</fontSize>
+         <alignment>right</alignment>
+         <verticalAlignment>center</verticalAlignment>
+         <color>${statusBarIconColor}</color>
+      </text>
+      <batteryIndicator name="batteryIndicator">
+         <color>${statusBarIconColor}</color>
+         <itemSpacing>0</itemSpacing>
+         <full>./_inc/images/battery-100-vertical.svg</full>
+         <at75>./_inc/images/battery-75-vertical.svg</at75>
+         <at50>./_inc/images/battery-50-vertical.svg</at50>
+         <at25>./_inc/images/battery-25-vertical.svg</at25>
+         <empty>./_inc/images/battery-0-vertical.svg</empty>
+         <incharge>./_inc/images/battery-charging-vertical.svg</incharge>
+         <networkIcon>./_inc/images/wifi-vertical.svg</networkIcon>
+      </batteryIndicator>
+   </view>
+
+   <view name="system,basic,detailed,video,grid">
+      <image name="logo">
+         <path>./_inc/systems/${system.theme}.svg</path>
+         <path>./_inc/systems/${system.theme}.png</path>
+      </image>
+      <text name="logoText">
+         <fontPath>${fontLogo}</fontPath>
+         <forceUppercase>true</forceUppercase>
+         <lineSpacing>1</lineSpacing>
+         <alignment>center</alignment>
+      </text>
+      <image name="background" extra="true">
+         <origin>0 0</origin>
+         <pos>0 0</pos>
+         <size>1 1</size>
+         <path>${spacerImage}</path>
+         <tile>true</tile>
+         <zIndex>0</zIndex>
+      </image>
+   </view>
+
+   <view name="system">
+      <image name="logo">
+         <color>${systemLogoColor}</color>
+      </image>
+      <text name="logoText">
+         <color>${systemLogoColor}</color>
+         <fontSize>0.15</fontSize>
+      </text>
+      <carousel name="systemcarousel">
+         <origin>0 0</origin>
+         <pos>0 0</pos>
+         <size>1 1</size>
+         <color>00000000</color>
+         <type>horizontal</type>
+         <logoScale>2</logoScale>
+         <logoSize>0.25 0.15</logoSize>
+         <maxLogoCount>2</maxLogoCount>
+         <maxLogoCount ifSubset="system-view-style:centered-one-logo">1</maxLogoCount>
+         <scrollSound>./_inc/sounds/scroll.wav</scrollSound>
+         <defaultTransition>instant</defaultTransition>
+      </carousel>
+      <text name="systemInfo">
+         <pos>1 1</pos>
+      </text>
+      <image ifSubset="system-view-style:centered|centered-custom|centered-one-logo" name="system-art-fade" extra="true">
+         <origin>0 0</origin>
+         <pos>0 0</pos>
+         <size>1 1</size>
+         <path>${spacerImage}</path>
+         <tile>true</tile>
+         <color>${systemArtFade}</color>
+         <zIndex>3</zIndex>
+      </image>
+      <image name="logo">
+         <path>./_inc/systems/_default.png</path>
+         <path>./_inc/systems/${system.theme}.png</path>
+         <color>ffffffcc</color>
+         <saturation>${systemArtSaturation}</saturation>
+      </image>
+      <image name="background" extra="true">
+         <color>000000</color>
+      </image>
+   </view>
+
+   <!-- ========== GAMELIST (Art Book classic) ========== -->
+   <include>./_inc/gamelist/base.xml</include>
+
+   <!-- ========== MENU (Art Book Next / ArkOS) ========== -->
+   <view name="menu">
+      <menuText name="menutitle">
+         <fontPath>${fontBold}</fontPath>
+         <fontSize>0.03</fontSize>
+         <color>ffffff</color>
+      </menuText>
+      <menuText name="menufooter">
+         <fontPath>${fontLight}</fontPath>
+         <fontSize>0.025</fontSize>
+         <color>ffffff77</color>
+      </menuText>
+      <menuText name="menutext">
+         <fontPath>${fontBold}</fontPath>
+         <fontSize>0.035</fontSize>
+         <color>ffffff77</color>
+         <separatorColor>ffffff11</separatorColor>
+         <selectedColor>ffffff</selectedColor>
+      </menuText>
+      <menuTextSmall name="menutextsmall">
+         <fontPath>${fontBold}</fontPath>
+         <fontSize>0.025</fontSize>
+         <color>ffffff77</color>
+      </menuTextSmall>
+      <menuGroup name="menugroup">
+         <fontPath>${fontRegular}</fontPath>
+         <fontSize>0.0325</fontSize>
+         <color>ffffff</color>
+         <separatorColor>ffffff99</separatorColor>
+         <backgroundColor>00000000</backgroundColor>
+         <lineSpacing>2.5</lineSpacing>
+      </menuGroup>
+      <menuTextEdit name="menutextedit">
+         <inactive>./_inc/images/menu-textinput.png</inactive>
+         <active>./_inc/images/menu-textinput-active.png</active>
+      </menuTextEdit>
+      <menuBackground name="menubg">
+         <color>${menuBackgroundColor}</color>
+         <size>1 1</size>
+         <cornerSize>20 20</cornerSize>
+      </menuBackground>
+      <menuIcons name="menuicons">
+         <iconSystem>./_inc/images/menu-icon-system.svg</iconSystem>
+         <iconUpdates>./_inc/images/menu-icon-update.svg</iconUpdates>
+         <iconControllers>./_inc/images/menu-icon-controller.svg</iconControllers>
+         <iconGames>./_inc/images/menu-icon-games.svg</iconGames>
+         <iconUI>./_inc/images/menu-icon-ui.svg</iconUI>
+         <iconSound>./_inc/images/menu-icon-sound.svg</iconSound>
+         <iconNetwork>./_inc/images/menu-icon-network.svg</iconNetwork>
+         <iconScraper>./_inc/images/menu-icon-scraper.svg</iconScraper>
+         <iconAdvanced>./_inc/images/menu-icon-advanced.svg</iconAdvanced>
+         <iconQuit>./_inc/images/menu-icon-quit.svg</iconQuit>
+         <iconRetroachievements>./_inc/images/menu-icon-achievements.svg</iconRetroachievements>
+         <iconKodi>./_inc/images/menu-icon-kodi.svg</iconKodi>
+         <iconRestart>./_inc/images/menu-icon-restart.svg</iconRestart>
+         <iconShutdown>./_inc/images/menu-icon-shutdown.svg</iconShutdown>
+         <iconFastShutdown>./_inc/images/menu-icon-shutdown.svg</iconFastShutdown>
+      </menuIcons>
+   </view>
+
+   <!-- Aspect Ratio overlays -->
+   <include ifSubset="aspect-ratio:16-9">./aspect-ratio-16-9.xml</include>
+   <include ifSubset="aspect-ratio:16-10">./aspect-ratio-16-10.xml</include>
+   <include ifSubset="aspect-ratio:4-3">./aspect-ratio-4-3.xml</include>
+   <include ifSubset="aspect-ratio:3-2">./aspect-ratio-3-2.xml</include>
+   <include ifSubset="aspect-ratio:5-3">./aspect-ratio-5-3.xml</include>
+   <include ifSubset="aspect-ratio:1-1">./aspect-ratio-1-1.xml</include>
+</theme>

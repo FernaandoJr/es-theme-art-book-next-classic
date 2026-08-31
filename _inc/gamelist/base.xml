@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Art Book classic gamelist views (from es-theme-art-book-3-2) -->
+<theme>
+   <formatVersion>7</formatVersion>
+
+   <view name="basic,detailed,video,grid">
+      <image name="background" extra="true">
+         <color>000000</color>
+         <zIndex>1</zIndex>
+      </image>
+      <image name="logo">
+         <origin>0.5 0.5</origin>
+         <pos>0.5 0.18</pos>
+         <maxSize>0.4 0.15</maxSize>
+         <path>./_inc/systems/${system.theme}.svg</path>
+         <path>./_inc/systems/${system.theme}.png</path>
+         <color>ffffff</color>
+         <zIndex>5</zIndex>
+      </image>
+      <text name="logoText">
+         <origin>0.5 0.5</origin>
+         <pos>0.5 0.18</pos>
+         <size>0.9 0.075</size>
+         <fontSize>0.06</fontSize>
+         <fontPath>${fontLogo}</fontPath>
+         <color>ffffffcc</color>
+         <forceUppercase>true</forceUppercase>
+         <alignment>center</alignment>
+         <zIndex>5</zIndex>
+      </text>
+      <text name="system-name" extra="true">
+         <color>ffffffcc</color>
+         <fontPath>${bodyFont}</fontPath>
+      </text>
+   </view>
+
+   <view name="basic">
+      <image name="background" extra="true">
+         <color>111111</color>
+      </image>
+      <textlist name="gamelist">
+         <pos>0.05 0.335</pos>
+         <size>0.9 0.64</size>
+         <alignment>center</alignment>
+         <lineSpacing>1.5</lineSpacing>
+         <fontSize>0.04</fontSize>
+         <scrollSound>./_inc/sounds/select.wav</scrollSound>
+         <fontPath>${bodyFont}</fontPath>
+         <horizontalMargin>0.008</horizontalMargin>
+         <selectorColor>222222</selectorColor>
+         <selectedColor>ffffff</selectedColor>
+         <primaryColor>ffffff44</primaryColor>
+         <secondaryColor>ffffff44</secondaryColor>
+         <zIndex>5</zIndex>
+      </textlist>
+   </view>
+
+   <view name="detailed,video">
+      <textlist name="gamelist">
+         <pos>0.05 0.335</pos>
+         <size>0.42 0.64</size>
+         <alignment>left</alignment>
+         <lineSpacing>1.5</lineSpacing>
+         <fontSize>0.04</fontSize>
+         <scrollSound>./_inc/sounds/select.wav</scrollSound>
+         <fontPath>${bodyFont}</fontPath>
+         <horizontalMargin>0.008</horizontalMargin>
+         <selectorColor>222222</selectorColor>
+         <selectedColor>ffffff</selectedColor>
+         <primaryColor>ffffff44</primaryColor>
+         <secondaryColor>ffffff44</secondaryColor>
+         <zIndex>5</zIndex>
+      </textlist>
+   </view>
+
+   <view name="detailed,video,grid">
+      <text name="md_lbl_rating,md_lbl_developer,md_developer,md_lbl_publisher,md_publisher,md_lbl_playcount,md_playcount,md_lbl_lastplayed,md_lbl_players,md_players,md_lbl_releasedate,md_lbl_genre,md_genre,md_description,md_name,md_lbl_gametime,md_gametime">
+         <visible>false</visible>
+         <fontPath>${bodyFont}</fontPath>
+         <alignment>left</alignment>
+         <color>ffffff</color>
+      </text>
+      <text name="md_genre,md_lbl_players,md_players">
+         <color>777777</color>
+      </text>
+      <text name="md_description">
+         <color>999999</color>
+      </text>
+      <text name="md_lbl_lastplayed,md_lbl_playcount,md_playcount,md_lbl_developer,md_developer,md_lbl_publisher,md_publisher,md_lbl_gametime,md_gametime">
+         <color>444444</color>
+      </text>
+      <datetime name="md_releasedate,md_lastplayed">
+         <visible>false</visible>
+         <fontPath>${bodyFont}</fontPath>
+         <color>444444</color>
+         <alignment>left</alignment>
+      </datetime>
+      <rating name="md_rating">
+         <visible>false</visible>
+         <fontPath>${bodyFont}</fontPath>
+         <color>444444</color>
+         <alignment>left</alignment>
+         <filledPath>./_inc/images/star-filled.svg</filledPath>
+         <unfilledPath>./_inc/images/star-empty.svg</unfilledPath>
+      </rating>
+      <text name="md_spacer" extra="true">
+         <color>222222</color>
+      </text>
+      <image name="md_image">
+         <origin>0.5 0.5</origin>
+         <pos>0.7375 0.578</pos>
+         <maxSize>0.4 0.45</maxSize>
+         <zIndex>2</zIndex>
+      </image>
+      <image name="md-media-mask" extra="true">
+         <origin>0 0</origin>
+         <pos>0 0</pos>
+         <size>1 1</size>
+         <zIndex>3</zIndex>
+      </image>
+   </view>
+
+   <view name="video,grid">
+      <image name="md_marquee">
+         <visible>false</visible>
+      </image>
+      <image name="md_image">
+         <visible>false</visible>
+      </image>
+      <video name="md_video">
+         <origin>0.5 0.5</origin>
+         <pos>0.7375 0.578</pos>
+         <maxSize>0.4 0.45</maxSize>
+         <delay>0.5</delay>
+         <showSnapshotDelay>true</showSnapshotDelay>
+         <showSnapshotNoVideo>true</showSnapshotNoVideo>
+         <snapshotSource>image</snapshotSource>
+         <snapshotSource>thumbnail</snapshotSource>
+         <zIndex>2</zIndex>
+      </video>
+   </view>
+
+   <view name="grid">
+      <image name="md_image,md_media_bezel,md_media_screen,help-favorite,help-launch">
+         <visible>false</visible>
+      </image>
+      <video name="md_video">
+         <visible>false</visible>
+         <showSnapshotDelay>false</showSnapshotDelay>
+      </video>
+      <imagegrid name="gamegrid">
+         <pos>0.05 0.325</pos>
+         <size>0.9 0.60</size>
+         <margin>0 0</margin>
+         <padding>0 0 0 0</padding>
+         <autoLayout>3 1</autoLayout>
+         <autoLayoutSelectedZoom>1.0</autoLayoutSelectedZoom>
+         <centerSelection>true</centerSelection>
+         <animateSelection>false</animateSelection>
+         <scrollSound>./_inc/sounds/select.wav</scrollSound>
+         <scrollDirection>horizontal</scrollDirection>
+         <scrollLoop>true</scrollLoop>
+      </imagegrid>
+      <gridtile name="default">
+         <padding>5 5</padding>
+         <backgroundCornerSize>0 0</backgroundCornerSize>
+         <selectionMode>image</selectionMode>
+         <backgroundColor>11111100</backgroundColor>
+         <imageColor>ffffff44</imageColor>
+      </gridtile>
+      <gridtile name="selected">
+         <backgroundColor>ffffff11</backgroundColor>
+         <imageColor>ffffffff</imageColor>
+      </gridtile>
+      <text name="gridtile">
+         <alignment>center</alignment>
+         <fontPath>${bodyFont}</fontPath>
+         <fontSize>0.036</fontSize>
+         <lineSpacing>1.2</lineSpacing>
+         <color>111111</color>
+      </text>
+      <text name="gridtile_selected">
+         <color>cccccc</color>
+      </text>
+   </view>
+</theme>

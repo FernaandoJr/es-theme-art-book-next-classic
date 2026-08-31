@@ -1,0 +1,43 @@
+<theme>
+   <formatVersion>7</formatVersion>
+
+   <view name="screen">
+      <batteryIndicator name="batteryIndicator">
+         <pos>0.0325 0.03125</pos>
+         <size>0.978125 0.05</size>
+      </batteryIndicator>
+      <text name="clock">
+         <pos>0.5775 0.03125</pos>
+         <size>0.4 0.05</size>
+         <fontSize>0.03</fontSize>
+         <alignment>right</alignment>
+         <verticalAlignment>center</verticalAlignment>
+         <color>ffffff</color>
+      </text>
+   </view>
+
+   <view name="system,basic,detailed,video,grid">
+      <helpsystem name="help">
+         <origin>0 0</origin>
+         <pos>1 1</pos>
+      </helpsystem>
+   </view>
+
+   <view name="system">
+      <text name="logoText">
+         <fontSize>0.0875</fontSize>
+      </text>
+      <carousel ifSubset="system-view-style:multi|multi-custom" name="systemcarousel">
+         <logoSize>1.025 1.025</logoSize>
+         <maxLogoCount>3</maxLogoCount>
+      </carousel>
+      <carousel ifSubset="system-view-style:centered-one-logo" name="systemcarousel">
+         <logoScale>1</logoScale>
+         <logoSize>0.7 0.5</logoSize>
+         <maxLogoCount>1</maxLogoCount>
+      </carousel>
+      <image ifSubset="system-view-style:fullscreen-custom" name="system-art" extra="true">
+         <size>0 1</size>
+      </image>
+   </view>
+</theme>
